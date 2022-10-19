@@ -70,7 +70,7 @@ public class OrderAndBillingTest {
     @org.junit.jupiter.api.Order(3)
     public void updateOrderTest() {
         // Get Data by ID
-        Order order = orderRepository.findById(Long.valueOf(11343)).get();
+        Order order = orderRepository.findById(Long.valueOf(1)).get();
         // Using Setter
         order.setOrderName("Today's Brew");
         order.setPrice(3.5);
@@ -92,7 +92,7 @@ public class OrderAndBillingTest {
     @org.junit.jupiter.api.Order(4)
     @Rollback(value = false)
     public void deleteOrderTest() {
-        Long id = Long.valueOf(11343);
+        Long id = Long.valueOf(1);
         Order order = orderRepository.findById(Long.valueOf(id)).get();
         orderRepository.delete(order);
 
